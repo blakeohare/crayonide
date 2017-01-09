@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrayonIDE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="CrayonIDE" Height="500" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" x:Name="main_menu">
+            <MenuItem Header="_File">
+                <MenuItem Header="New Project..." InputGestureText="Ctrl + Shift + N"/>
+                <MenuItem Header="Open Project..." InputGestureText="Ctrl + Shift + O"/>
+                <MenuItem Header="Open Recent">
+                    <!-- list recent projects -->
+                    <MenuItem Header="No recent projects" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem Header="Save File" InputGestureText="Ctrl + S"/>
+                <MenuItem Header="Save All" InputGestureText="Ctrl + Shift + S"/>
+                <MenuItem Header="Close Project" InputGestureText="Ctrl + Shift + W"/>
+                <Separator/>
+                <MenuItem Header="Exit" InputGestureText="Alt + F4"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Undo" InputGestureText="Ctrl + Z"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl + Shift + Z"/>
+                <Separator/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl + X"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl + C"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl + V"/>
+                <Separator/>
+                <MenuItem Header="Select All" InputGestureText="Ctrl + A"/>
+                <Separator/>
+                <MenuItem Header="Go to Line..." InputGestureText="Ctrl + G"/>
+                <Separator/>
+                <MenuItem Header="Find in File..." InputGestureText="Ctrl + F"/>
+                <MenuItem Header="Find Next" InputGestureText="F3"/>
+                <MenuItem Header="Find in Project..." InputGestureText="Ctrl + Shift + F"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="Project Browser"/>
+                <MenuItem Header="Output Console"/>
+            </MenuItem>
+            <MenuItem Header="_Build">
+                <MenuItem Header="Modify Project File"/>
+                <Separator/>
+                <MenuItem Header="Build" InputGestureText="Ctrl + B"/>
+                <MenuItem Header="Build and Run" InputGestureText="F5"/>
+                <MenuItem Header="Build and Run Target..." InputGestureText="Shift + F5"/>
+                <Separator/>
+                <MenuItem Header="Set Active Target">
+                    <MenuItem Header="No targets defined" IsEnabled="False"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Window">
+                <MenuItem Header="Close Tab" InputGestureText="Ctrl + W"/>
+                <MenuItem Header="Close All Tabs"/>
+                <MenuItem Header="Close All Other Tabs"/>
+            </MenuItem>
+        </Menu>
+        <DockPanel x:Name="dock_host" Background="#FF444444">
+            
+        </DockPanel>
+    </DockPanel>
 </Window>
